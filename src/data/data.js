@@ -5,7 +5,7 @@ export async function getTrafficCounts() {
   let config = {
     headers: {
       Accept: "application/json",
-      "X-App-Token": process.env.REACT_APP_app_token,
+      "X-App-Token": "IswUL3O8fZUVByJcifKUPLNVos",
     },
   };
 

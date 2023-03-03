@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import {
   GoogleMap,
   useJsApiLoader,
+  LoadScript,
   Marker,
   HeatmapLayerF,
 } from "@react-google-maps/api";
@@ -20,6 +21,7 @@ function App() {
 
   const [trafficData, setTrafficData] = useState([]);
   const [maxTraffic, setMaxTraffic] = useState(0);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   useEffect(() => {
     getTrafficCounts().then((data) => {
@@ -29,12 +31,13 @@ function App() {
       console.log(data);
       setMaxTraffic(max);
       setTrafficData(data);
+      setDataLoaded(true);
     });
   }, []);
 
   return (
     <div className="App">
-      {isLoaded ? (
+      {isLoaded && dataLoaded ? (
         <GoogleMap
           mapContainerStyle={{
             width: "800px",
