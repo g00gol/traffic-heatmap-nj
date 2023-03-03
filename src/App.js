@@ -40,8 +40,8 @@ function App() {
       {isLoaded && dataLoaded ? (
         <GoogleMap
           mapContainerStyle={{
-            width: "800px",
-            height: "800px",
+            width: "100vw",
+            height: "100vh",
           }}
           center={{ lat: 39.843864, lng: -75.01911 }}
           zoom={10}
@@ -57,7 +57,7 @@ function App() {
               };
             })}
             options={{
-              radius: 15,
+              radius: 20,
             }}
           />
         </GoogleMap>
